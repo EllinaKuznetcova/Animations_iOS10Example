@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Example1ViewController: UIViewController {
     
     @IBOutlet weak var squareView: UIView!
     var squareCenter: CGPoint!
@@ -41,8 +41,6 @@ class ViewController: UIViewController {
                 target.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
             })
             self.squareAnimator.startAnimation()
-            // Three important properties on an animator:
-            print("Animator isRunning, isReversed, state: \(self.squareAnimator.isRunning), \(self.squareAnimator.isReversed), \(self.squareAnimator.state)")
         case .changed:
             let translation = gesture.translation(in: self.view)
             target.center = CGPoint(x: squareCenter!.x + translation.x, y: squareCenter!.y + translation.y)
